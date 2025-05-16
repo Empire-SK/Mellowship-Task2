@@ -3,6 +3,8 @@ import '../css/PokemonList.css';
 import search from '../assets/search.png';
 import pokeball from '../assets/pokeball.png';
 import { fetchPokemon } from '../api/pokemonapi';
+import { Plus } from 'lucide-react';
+import TeamDisplay from './TeamDisplay';
 
 const PokemonList = () => {
     const [pokemonList, setPokemonList] = useState([]);
@@ -11,6 +13,22 @@ const PokemonList = () => {
     const [selectedType, setSelectedType] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
+    const [team, setTeam] = useState([]);
+    const MAX_TEAM_SIZE = 6;
+
+    const isTeamFull = team.length >= MAX_TEAM_SIZE;
+
+    const handleAddToTeam = (pokemon) => {
+        if (team.length < MAX_TEAM_SIZE && !team.some(p => p.id === pokemon.id)) {
+            setTeam([...team, pokemon]);
+        }
+    };
+
+    const handleRemoveFromTeam = (pokemonId) => {
+        setTeam(team.filter(pokemon => pokemon.id !== pokemonId));
+    };
+
+    const isInTeam = (pokemonId) => team.some(p => p.id === pokemonId);
 
     useEffect(() => {
         setIsLoading(true);
@@ -58,6 +76,9 @@ const PokemonList = () => {
         <main className="pokemon-main">
             <div className="pokemon-container">
                 <h2>Pokémon Collection</h2>
+                <div className="team-counter">
+                    Team Members: {team.length}/{MAX_TEAM_SIZE}
+                </div>
 
                 <div className="search-filter-container">
                     <div className="search-container">
@@ -76,7 +97,7 @@ const PokemonList = () => {
 
                     <div className="type-filters">
                         <span className="filter-label">Filter by type:</span>
-                        {['Fire', 'Grass', 'Ground', 'Water'].map((type) => (
+                        {['Fire', 'Grass', 'Ground', 'Water','fighting', 'poison', 'ground', 'flying', 'psychic',].map((type) => (
                             <button
                                 key={type}
                                 className={`type-filter ${type.toLowerCase()} ${
@@ -143,6 +164,17 @@ const PokemonList = () => {
                                         })}
                                     </div>
                                 </div>
+                                <button 
+                                    className={`add-button ${isInTeam(pokemon.id) ? 'in-team' : ''}`}
+                                    onClick={() => handleAddToTeam(pokemon)}
+                                    disabled={isInTeam(pokemon.id) || isTeamFull}
+                                >
+                                    {isInTeam(pokemon.id) ? 'Added to Team' : isTeamFull ? 'Team Full' : (
+                                        <>
+                                            <Plus size={16} /> Add to Team
+                                        </>
+                                    )}
+                                </button>
                             </div>
                         ))
                     ) : (
@@ -150,6 +182,7 @@ const PokemonList = () => {
                     )}
                 </div>
             </div>
+            <TeamDisplay team={team} removeFromTeam={handleRemoveFromTeam} />
         </main>
     );
 };
