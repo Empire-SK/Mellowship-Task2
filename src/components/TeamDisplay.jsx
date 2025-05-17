@@ -5,6 +5,15 @@ import '../css/TeamDisplay.css';
 const TeamDisplay = ({ team, removeFromTeam }) => {
     if (team.length === 0) return null;
 
+    // Calculate total stats for the team
+    const totalStats = team.reduce((acc, pokemon) => {
+        pokemon.stats.forEach(stat => {
+            const statName = stat.stat.name;
+            acc[statName] = (acc[statName] || 0) + stat.base_stat;
+        });
+        return acc;
+    }, {});
+
     return (
         <div className="team-display">
             <div className="team-header">
@@ -40,7 +49,7 @@ const TeamDisplay = ({ team, removeFromTeam }) => {
                             {['hp', 'attack', 'defense', 'speed'].map((statName) => {
                                 const stat = pokemon.stats.find(s => s.stat.name === statName);
                                 return (
-                                    <div key={statName} className="team-stat">
+                                    <div key={statName} className="team-stat" data-stat={statName}>
                                         {statName.toUpperCase()}: {stat.base_stat}
                                     </div>
                                 );
@@ -49,6 +58,22 @@ const TeamDisplay = ({ team, removeFromTeam }) => {
                     </div>
                 ))}
             </div>
+            {team.length > 0 && (
+                <div className="team-strength">
+                    <div className="team-strength-title">Team Total Stats</div>
+                    <div className="team-total-stats">
+                        {Object.entries(totalStats).map(([statName, value]) => (
+                            <div 
+                                key={statName} 
+                                className="team-total-stat" 
+                                data-stat={`total-${statName}`}
+                            >
+                                {statName.toUpperCase().replace('-', ' ')}: {value}
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
