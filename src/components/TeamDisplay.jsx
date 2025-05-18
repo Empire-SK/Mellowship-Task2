@@ -1,5 +1,4 @@
 import React from 'react';
-import { X } from 'lucide-react';
 import '../css/TeamDisplay.css';
 
 const TeamDisplay = ({ team, removeFromTeam }) => {
@@ -27,7 +26,7 @@ const TeamDisplay = ({ team, removeFromTeam }) => {
                             onClick={() => removeFromTeam(pokemon.id)}
                             aria-label={`Remove ${pokemon.name} from team`}
                         >
-                            <X size={16} />
+                            <span className="close-icon">×</span>
                         </button>
                         <img 
                             src={pokemon.sprites.front_default} 

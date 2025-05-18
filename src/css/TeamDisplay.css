@@ -11,7 +11,9 @@
 }
 
 .team-header {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin-bottom: 1rem;
 }
 
@@ -31,7 +33,7 @@
 .team-member-card {
     position: relative;
     min-width: 200px;
-    background: var(--card-bg);
+    background: #1f2229;
     border-radius: 8px;
     padding: 1rem;
     box-shadow: 0 2px 4px rgb(0 0 0 / 23%);
@@ -151,6 +153,12 @@
     gap: 0.25rem;
 }
 
+.close-icon {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1;
+}
+
 .team-total-stat[data-stat="total-hp"] {
     background-color: rgba(255, 89, 89, 0.7);
     color: white;
@@ -179,6 +187,43 @@
 .team-total-stat[data-stat="total-speed"] {
     background-color: rgba(250, 146, 178, 0.7);
     color: white;
+}
+
+.team-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: auto;
+}
+
+.team-button {
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.save-button {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.save-button:hover {
+    background-color: #45a049;
+}
+
+.clear-button {
+    background-color: #dc3545;
+    color: white;
+}
+
+.clear-button:hover {
+    background-color: #c82333;
 }
 
 @keyframes slideUp {

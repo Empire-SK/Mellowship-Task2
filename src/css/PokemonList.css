@@ -103,8 +103,8 @@
 .pokemon-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 2rem;
-    padding: 2rem;
+    gap: 1rem;
+    padding: 0rem;
 }
 
 .status-message {
