@@ -421,4 +421,44 @@
     .search-input-container {
         margin-top: 0;
     }
+
+}
+
+@media(max-width: 480px) {
+    .pokemon-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+
+    .add-button {
+        opacity: 1; /* Always visible on mobile */
+        font-size: 0.8rem;
+        padding: 0.5rem;
+    }
+    
+    /* Remove hover effect on mobile */
+    .pokemon-card:hover .add-button {
+        opacity: 1;
+    }
+
+    .pokemon-card {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .pokemon-image {
+        width: 80px;
+        height: 80px;
+    }
+
+    .pokemon-name {
+        font-size: 1rem;
+    }
+
+    .pokemon-types {
+        gap: 4px;
+    }
+
+    .type-badge {
+        font-size: 0.75rem;
+    }
 }
