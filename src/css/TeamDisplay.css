@@ -224,3 +224,64 @@
         min-width: 150px;
     }
 }
+
+@media (max-width: 480px) {
+    .team-container {
+        padding: 10px;
+    }
+
+    .team-header {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 10px;
+    }
+
+    .team-card {
+        padding: 10px;
+        min-height: 200px;
+    }
+
+    .team-pokemon-image {
+        width: 60px;
+        height: 60px;
+    }
+
+    .team-pokemon-name {
+        font-size: 14px;
+    }
+
+    .team-pokemon-types {
+        gap: 5px;
+    }
+
+    .team-type-badge {
+        font-size: 12px;
+        padding: 3px 8px;
+    }
+
+    .remove-button {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    .empty-team-message {
+        font-size: 14px;
+        padding: 15px;
+    }
+
+    .stats-container {
+        font-size: 12px;
+    }
+
+    .stat-label {
+        width: 60px;
+    }
+
+    .stat-bar {
+        height: 6px;
+    }
+}

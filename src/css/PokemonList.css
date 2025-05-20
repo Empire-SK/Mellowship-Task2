@@ -425,40 +425,159 @@
 }
 
 @media(max-width: 480px) {
-    .pokemon-grid {
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    /* Main container adjustments */
+    .pokemon-main {
+        padding: 2px 12px;
+        margin-top: -30px;
     }
 
-    .add-button {
-        opacity: 1; /* Always visible on mobile */
-        font-size: 0.8rem;
-        padding: 0.5rem;
+    .pokemon-container h2 {
+        font-size: 24px;
+        margin: 20px 0 16px;
     }
-    
-    /* Remove hover effect on mobile */
-    .pokemon-card:hover .add-button {
-        opacity: 1;
+
+    /* Search and filter adjustments */
+    .search-filter-container {
+        gap: 10px;
+        margin-bottom: 16px;
+    }
+
+    .search-input-container {
+        width: 100%;
+        margin: 10px 0;
+        padding: 0 10px;
+    }
+
+    .search-icon {
+        width: 16px;
+        height: 16px;
+    }
+
+    .search-input {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+
+    .type-filters {
+        margin: 0;
+        gap: 8px;
+        padding: 0 5px;
+    }
+
+    .type-filter {
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+
+    /* Grid and card adjustments */
+    .pokemon-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 0.5fr));
+        gap: 0.75rem;
     }
 
     .pokemon-card {
+        padding: 1rem 0.5rem;
+        min-height: 278px;
         max-width: 100%;
-        margin: 0 auto;
     }
 
     .pokemon-image {
         width: 80px;
         height: 80px;
+        margin-bottom: 0.5rem;
     }
 
+    /* Pokemon details adjustments */
     .pokemon-name {
         font-size: 1rem;
+        margin: 0.25rem 0;
     }
 
     .pokemon-types {
         gap: 4px;
+        margin-bottom: 8px;
     }
 
     .type-badge {
         font-size: 0.75rem;
+        padding: 0.2rem 0.5rem;
+    }
+
+    /* Stats adjustments */
+    .pokemon-stats {
+        padding: 0.25rem;
+        margin-top: 0.5rem;
+    }
+
+    .stat-row {
+        margin-bottom: 0.25rem;
+        gap: 0.25rem;
+    }
+
+    .stat-label {
+        width: 70px;
+        font-size: 0.7rem;
+    }
+
+    .stat-value {
+        font-size: 0.7rem;
+    }
+
+    .stat-bar-container {
+        height: 6px;
+    }
+
+    .stat-item {
+        padding: 4px 8px;
+        font-size: 11px;
+    }
+
+    /* Button adjustments */
+    .add-button {
+        width: 100%;
+        opacity: 1;
+        font-size: 0.8rem;
+        padding: 0.5rem;
+        margin-top: auto;
+    }
+
+    /* Loading and error states */
+    .loading-container {
+        min-height: 150px;
+    }
+
+    .loading-spinner {
+        width: 40px;
+        height: 40px;
+    }
+
+    .loading-text {
+        font-size: 0.9rem;
+    }
+
+    .error-container {
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+
+    /* Team counter */
+    .team-counter {
+        font-size: 0.9rem;
+        padding: 0.25rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    /* Remove hover effects for mobile */
+    .pokemon-card:hover {
+        transform: none;
+    }
+
+    .type-filter:hover {
+        opacity: 1;
+    }
+
+    .add-button:hover:not(:disabled) {
+        transform: none;
+        box-shadow: none;
     }
 }

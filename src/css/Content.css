@@ -22,3 +22,19 @@
     max-width: 600px;
     line-height: 1.6;
 }
+
+@media (max-width: 480px) {
+    .content-container {
+        padding: 10px;
+    }
+
+    .content {
+        margin-top: 60px; /* Adjust based on header height */
+        padding: 10px;
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+}
