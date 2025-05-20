@@ -24,16 +24,17 @@
 
 .team-members {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     overflow-x: auto;
     padding: 0.5rem;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 .team-member-card {
     position: relative;
     min-width: 200px;
-    background: #1f2229;
+    background: var(--teamcard-bg);
+    color: var(--text-color);
     border-radius: 8px;
     padding: 1rem;
     box-shadow: 0 2px 4px rgb(0 0 0 / 23%);
@@ -127,7 +128,6 @@
     padding: 0.5rem;
     border-radius: 8px;
     margin-top: 1rem;
-    box-shadow: 0 2px 4px rgb(0 0 0 / 15%);
 }
 
 .team-strength-title {
@@ -208,23 +208,6 @@
     transition: all 0.2s ease;
 }
 
-.save-button {
-    background-color: #4CAF50;
-    color: white;
-}
-
-.save-button:hover {
-    background-color: #45a049;
-}
-
-.clear-button {
-    background-color: #dc3545;
-    color: white;
-}
-
-.clear-button:hover {
-    background-color: #c82333;
-}
 
 @keyframes slideUp {
     from {

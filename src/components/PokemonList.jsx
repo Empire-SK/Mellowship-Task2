@@ -3,7 +3,6 @@ import '../css/PokemonList.css';
 import search from '../assets/search.png';
 import pokeball from '../assets/pokeball.png';
 import { fetchPokemon } from '../api/pokemonapi';
-import { Plus } from 'lucide-react';
 import TeamDisplay from './TeamDisplay';
 
 const PokemonList = () => {
@@ -97,12 +96,11 @@ const PokemonList = () => {
 
                     <div className="type-filters">
                         <span className="filter-label">Filter by type:</span>
-                        {['Fire', 'Grass', 'Ground', 'Water','fighting', 'poison', 'ground', 'flying', 'psychic',].map((type) => (
+                        {['Fire', 'Grass', 'Ground', 'Water', 'fighting', 'poison', 'ground', 'flying', 'psychic',].map((type) => (
                             <button
                                 key={type}
-                                className={`type-filter ${type.toLowerCase()} ${
-                                    selectedType === type.toLowerCase() ? 'active' : ''
-                                }`}
+                                className={`type-filter ${type.toLowerCase()} ${selectedType === type.toLowerCase() ? 'active' : ''
+                                    }`}
                                 onClick={() => handleTypeFilter(type)}
                                 aria-pressed={selectedType === type.toLowerCase()}
                             >
@@ -123,10 +121,10 @@ const PokemonList = () => {
                     ) : filteredPokemon.length > 0 ? (
                         filteredPokemon.map((pokemon) => (
                             <div key={pokemon.id} className="pokemon-card">
-                                <img 
-                                    src={pokemon.sprites.front_default} 
+                                <img
+                                    src={pokemon.sprites.front_default}
                                     alt={pokemon.name}
-                                    className="pokemon-image" 
+                                    className="pokemon-image"
                                 />
                                 <h3 className="pokemon-name">
                                     {pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}
@@ -134,7 +132,7 @@ const PokemonList = () => {
                                 <div className="pokemon-details">
                                     <div className="pokemon-types">
                                         {pokemon.types.map((type) => (
-                                            <span 
+                                            <span
                                                 key={type.type.name}
                                                 className={`type-badge ${type.type.name}`}
                                             >
@@ -150,7 +148,7 @@ const PokemonList = () => {
                                                 <div key={statName} className="stat-row">
                                                     <span className="stat-label">{statName.toUpperCase()}</span>
                                                     <div className="stat-bar-container">
-                                                        <div 
+                                                        <div
                                                             className="stat-bar"
                                                             style={{
                                                                 width: `${(value / 255) * 100}%`,
@@ -164,14 +162,14 @@ const PokemonList = () => {
                                         })}
                                     </div>
                                 </div>
-                                <button 
+                                <button
                                     className={`add-button ${isInTeam(pokemon.id) ? 'in-team' : ''}`}
                                     onClick={() => handleAddToTeam(pokemon)}
                                     disabled={isInTeam(pokemon.id) || isTeamFull}
                                 >
                                     {isInTeam(pokemon.id) ? 'Added to Team' : isTeamFull ? 'Team Full' : (
                                         <>
-                                            <Plus size={16} /> Add to Team
+                                            <span className="plus-symbol">+</span> Add to Team
                                         </>
                                     )}
                                 </button>

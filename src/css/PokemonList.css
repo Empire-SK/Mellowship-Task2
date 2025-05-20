@@ -46,7 +46,7 @@
     background-color: var(--search-bg);
     padding: 0 15px;
     margin-top: 20px;
-    margin-left: 49px;
+    margin-left: 16px;
     width: 483px;
 }
 
@@ -341,8 +341,13 @@
     color: black;
 }
 
+.plus-symbol {
+    font-weight: bold;
+    margin-right: 4px;
+}
+
 .add-button {
-        width: 92%;
+    width: 92%;
     margin: 0rem auto 0;
     padding: 0.75rem;
     border-radius: 10px;

@@ -8,6 +8,7 @@
     --button-text: #333333;
     --content-bg: #ffffff;
     --card-bg: #ffffff;
+    --teamcard-bg: #ffffff;
     --card-shadow: rgba(0, 0, 0, 0.1);
     --card-hover-shadow: rgba(0, 0, 0, 0.2);
     --content-text: #333333;
@@ -50,6 +51,7 @@
     --button-text: #ffffff;
     --content-bg: #1a1a1a;
     --card-bg: #1e273b;
+    --teamcard-bg: #1f2229;
     --card-shadow: rgba(0, 0, 0, 0.3);
     --card-hover-shadow: rgba(0, 0, 0, 0.4);
     --content-text: #ffffff;
