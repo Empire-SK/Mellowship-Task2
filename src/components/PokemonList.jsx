@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import '../css/PokemonList.css';
-import search from '../assets/search.png';
 import pokeball from '../assets/pokeball.png';
 import { fetchPokemon } from '../api/pokemonapi';
 import TeamDisplay from './TeamDisplay';
+import Filter from './Filter';
 
 const PokemonList = () => {
     const [pokemonList, setPokemonList] = useState([]);
@@ -63,14 +63,6 @@ const PokemonList = () => {
         setFilteredPokemon(filtered);
     }, [searchTerm, selectedType, pokemonList]);
 
-    const handleSearch = (e) => {
-        setSearchTerm(e.target.value);
-    };
-
-    const handleTypeFilter = (type) => {
-        setSelectedType(type.toLowerCase() === selectedType.toLowerCase() ? '' : type.toLowerCase());
-    };
-
     return (
         <main className="pokemon-main">
             <div className="pokemon-container">
@@ -79,36 +71,12 @@ const PokemonList = () => {
                     Team Members: {team.length}/{MAX_TEAM_SIZE}
                 </div>
 
-                <div className="search-filter-container">
-                    <div className="search-container">
-                        <div className="search-input-container">
-                            <img src={search} alt="Search icon" className="search-icon" />
-                            <input
-                                type="text"
-                                placeholder="Search Pokémon..."
-                                value={searchTerm}
-                                onChange={handleSearch}
-                                aria-label="Search Pokémon by name"
-                                className="search-input"
-                            />
-                        </div>
-                    </div>
-
-                    <div className="type-filters">
-                        <span className="filter-label">Filter by type:</span>
-                        {['Fire', 'Grass', 'Ground', 'Water', 'fighting', 'poison', 'ground', 'flying', 'psychic',].map((type) => (
-                            <button
-                                key={type}
-                                className={`type-filter ${type.toLowerCase()} ${selectedType === type.toLowerCase() ? 'active' : ''
-                                    }`}
-                                onClick={() => handleTypeFilter(type)}
-                                aria-pressed={selectedType === type.toLowerCase()}
-                            >
-                                {type}
-                            </button>
-                        ))}
-                    </div>
-                </div>
+                <Filter
+                    searchTerm={searchTerm}
+                    setSearchTerm={setSearchTerm}
+                    selectedType={selectedType}
+                    setSelectedType={setSelectedType}
+                />
 
                 <div className="pokemon-grid">
                     {isLoading ? (
