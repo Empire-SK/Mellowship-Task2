@@ -1,55 +1,89 @@
-# React + TypeScript + Vite
+# 🧩 Pokémon Team Builder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📖 Overview
 
-Currently, two official plugins are available:
+The Pokémon Team Builder is a React-based web application that allows users to browse, search, and filter Pokémon using the PokéAPI. Users can view detailed information for each Pokémon—such as name, types, stats, and sprites—and build a team of up to six Pokémon. The app features a responsive design, dark/light theme support, and an intuitive user interface.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# ✨ Features
+- Browse Pokémon: Grid display with names, images, types, and stats (HP, Attack, Defense, Speed).
 
-## Expanding the ESLint configuration
+- Search: Search by name using a dynamic input field.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Filter by Type: Toggleable buttons to filter by Pokémon type (e.g., Fire, Water, Grass).
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- Team Building: Add or remove Pokémon to/from a team (maximum 6 Pokémon).
+
+- Loading & Error Handling: Displays a spinner while fetching data; handles API errors gracefully.
+
+- Theme Support: Toggle between light and dark modes using a custom ThemeContext.
+
+- Responsive Design: Fully responsive using Tailwind CSS or custom CSS for various screen sizes.
+
+# 🛠 Tech Stack
+
+
+
+
+
+- Frontend: React, JavaScript, JSX
+
+
+
+- API: Pokémon API (https://pokeapi.co/)
+
+
+
+- Styling: Custom CSS (App.css, PokemonList.css)
+
+
+
+- Context: React Context API for theme management
+
+
+
+- Build Tool: Vite or Create React App (adjust based on your setup)
+
+
+
+- Dependencies: None for API calls (uses native fetch); optional Axios for alternative HTTP requests
+
+# 📁 Project Structure
+``` bash
+src/
+├── api/
+│   └── pokemonapi.js        # API fetching logic
+├── assets/
+│   ├── pokeball.png        # Loading spinner image
+│   ├── search.png          # Search icon
+├── components/
+│   ├── Content.jsx         # Main content component
+│   ├── Filter.jsx          # Search and type filter component
+│   ├── Header.jsx          # Header component
+│   ├── PokemonList.jsx     # Pokémon grid and team management
+│   ├── TeamDisplay.jsx     # Displays selected team
+├── context/
+│   └── Themecontext.jsx    # Theme context for styling
+├── css/
+│   ├── App.css             # Global styles
+│   ├── PokemonList.css     # Styles for Pokémon list and filter
+├── App.jsx                 # Main app component
+└── index.jsx               # Entry point
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+# 🚀 Installation & Setup
+## 1. Clone the Repository
+```bash
+git clone https://github.com/your-username/pokemon-collection-app.git
+cd pokemon-collection-app
 ```
-# Mellowship-Task2
+
+## 2. Install Dependencies
+Make sure Node.js is installed. Then run:
+```bash
+npm install
+```
+
+3. Start the Development Server
+```bash
+npm start
+```
