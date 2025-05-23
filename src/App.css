@@ -12,12 +12,14 @@
     --card-shadow: rgba(0, 0, 0, 0.1);
     --card-hover-shadow: rgba(0, 0, 0, 0.2);
     --content-text: #333333;
-    --heading-color: #2a75bb;
+    --heading-color: #333333;
     --card-bg: #ffffff;
     --shadow-color: rgba(0, 0, 0, 0.1);
     --text-color: #333333;
-    --heading-color: #2a75bb;
+    --heading-color: #333333;
     --search-bg: #f5f5f5;
+    --addbutton-bg:#000000;
+
 
 
     /* Pokemon Type Colors */
@@ -56,6 +58,8 @@
     --card-hover-shadow: rgba(0, 0, 0, 0.4);
     --content-text: #ffffff;
     --heading-color: #315cca;
+    --addbutton-bg:#000000;
+    --type-fontcolor:#000000;
 
     /* Pokemon Type Colors - Same as light theme for consistency */
     --type-normal: #A8A878;

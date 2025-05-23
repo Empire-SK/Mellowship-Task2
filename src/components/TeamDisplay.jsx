@@ -44,7 +44,7 @@ const TeamDisplay = ({ team, removeFromTeam }) => {
                                 </span>
                             ))}
                         </div>
-                        <div className="team-pokemon-stats">
+                        {/* <div className="team-pokemon-stats">
                             {['hp', 'attack', 'defense', 'speed'].map((statName) => {
                                 const stat = pokemon.stats.find(s => s.stat.name === statName);
                                 return (
@@ -53,7 +53,7 @@ const TeamDisplay = ({ team, removeFromTeam }) => {
                                     </div>
                                 );
                             })}
-                        </div>
+                        </div> */}
                     </div>
                 ))}
             </div>

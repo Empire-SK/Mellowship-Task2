@@ -109,25 +109,15 @@ const PokemonList = () => {
                                         ))}
                                     </div>
                                     <div className="pokemon-stats">
-                                        {['hp', 'attack', 'defense', 'speed'].map((statName) => {
-                                            const stat = pokemon.stats.find(s => s.stat.name === statName);
-                                            const value = stat.base_stat;
-                                            return (
-                                                <div key={statName} className="stat-row">
-                                                    <span className="stat-label">{statName.toUpperCase()}</span>
-                                                    <div className="stat-bar-container">
-                                                        <div
-                                                            className="stat-bar"
-                                                            style={{
-                                                                width: `${(value / 255) * 100}%`,
-                                                                backgroundColor: value > 100 ? '#78C850' : '#F08030'
-                                                            }}
-                                                        />
-                                                    </div>
-                                                    <span className="stat-value">{value}</span>
-                                                </div>
-                                            );
-                                        })}
+                                        {pokemon.stats.map((stat) => (
+                                            <div 
+                                                key={stat.stat.name} 
+                                                className="stat-badge" 
+                                                data-stat={stat.stat.name}
+                                            >
+                                                {stat.stat.name.toUpperCase().replace('-', ' ')}: {stat.base_stat}
+                                            </div>
+                                        ))}
                                     </div>
                                 </div>
                                 <button

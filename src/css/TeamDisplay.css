@@ -32,7 +32,7 @@
 
 .team-member-card {
     position: relative;
-    min-width: 200px;
+    min-width: 160px;
     background: var(--teamcard-bg);
     color: var(--text-color);
     border-radius: 8px;
@@ -125,7 +125,7 @@
 
 .team-strength {
     background: var(--card-bg);
-    padding: 0.5rem;
+    /* padding: 0.5rem; */
     border-radius: 8px;
     margin-top: 1rem;
 }
