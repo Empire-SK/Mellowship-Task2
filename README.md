@@ -24,7 +24,6 @@ The Pokémon Team Builder is a React-based web application that allows users to 
 
 
 
-
 - Frontend: React, JavaScript, JSX
 
 
@@ -73,8 +72,8 @@ src/
 # 🚀 Installation & Setup
 ## 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/pokemon-collection-app.git
-cd pokemon-collection-app
+https://github.com/Empire-SK/Pokemon_builder.git
+cd Pokemon_builder
 ```
 
 ## 2. Install Dependencies
