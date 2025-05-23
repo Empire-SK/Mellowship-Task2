@@ -3,7 +3,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: var(--card-bg);
+    background-color: var(--team-panel);
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
     padding: 1rem;
     z-index: 1000;

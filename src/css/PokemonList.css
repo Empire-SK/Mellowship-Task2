@@ -120,7 +120,7 @@
     border-radius: 10px;
     padding: 1.5rem 1.5rem;
     text-align: center;
-    box-shadow: 0 2px 4px rgb(0 0 0 / 40%);
+    box-shadow: var(--box-shadow);
     transition: transform 0.2s ease;
     max-width: 300px;
     margin: 0 auto;
@@ -418,7 +418,7 @@
 }
 
 .add-button.in-team:disabled {
-    background-color:  var(--addbutton-bg);
+    background-color: var(--addbutton-bg);
     opacity: 0.8;
     cursor: default;
 }
@@ -456,6 +456,7 @@
 }
 
 @media(max-width: 480px) {
+
     /* Main container adjustments */
     .pokemon-main {
         padding: 2px 12px;
@@ -606,7 +607,7 @@
         padding: 0.25rem;
         margin-bottom: 0.5rem;
     }
-    
+
     /* Remove hover effects for mobile */
     .pokemon-card:hover {
         transform: none;
