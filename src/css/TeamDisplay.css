@@ -222,6 +222,16 @@
 }
 
 @media (max-width: 480px) {
+    .pokemon-main {
+        padding-bottom: 250px;
+        /* Adjust for mobile */
+    }
+
+    .team-display {
+        max-height: 200px;
+        /* Smaller height on mobile */
+    }
+
     .team-container {
         padding: 10px;
     }
